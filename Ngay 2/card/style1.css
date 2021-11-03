@@ -1,0 +1,6 @@
+.card-image img {width: 300px;}
+
+.card-image img {overflow: hidden;}
+
+
+.card-image img {object-fit: cover;}
