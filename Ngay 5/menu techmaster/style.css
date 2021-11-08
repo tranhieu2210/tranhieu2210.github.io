@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.menu {
+    background-color: #34455c;
+    display: flex;
+    min-height: 60px;
+
+
+}
+
+.menu-item  {
+    position: relative;
+    margin: 0px 10px;
+}
+
+.menu-item > a {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    line-height: 60px;
+}
+
+.menu-item:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu {
+    position: absolute;
+    width: 200px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 15%);
+    display: none;
+}
+
+.sub-menu a {
+    color: #464646;
+    display: block;
+    text-align: center;
+    padding: 10px 16px;
+
+}
+
+.sub-menu a:hover {
+    background-color: #ddd;
+    color: white;
+}
+ 
+.sub-menu2 a:hover {
+    background-color: #ddd;
+    color: white;
+}
+
+.sub-menu2 a {
+    color: #464646;
+    display: block;
+    text-align: center;
+    padding: 10px 16px;
+
+}
+
+.sub-menu2 {
+    position: absolute;
+    width: 200px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 15%);
+    display: none;
+}
+
+
+.menu-item:hover .sub-menu2 {
+    display: block;
+}
+
+.logo img {
+    width: 88px;
+    height: 32px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.menu-cart a {
+    font-size: 23px;
+    color: white;
+    
+}
+
+.menu-cart {
+    display: flex;
+    align-items: center;
+
+}

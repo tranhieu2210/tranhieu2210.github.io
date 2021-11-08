@@ -1,0 +1,46 @@
+body {
+    height: 3000px;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    
+}
+.box1 {
+    width: 1000px;
+    height: 500px;
+    position: relative;
+
+}
+
+.box2 {
+    background-color: brown;
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+}
+button {
+    background-color: chocolate;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    position: fixed;
+    padding:  10px 20px;
+    right: 50px;
+    bottom: 50px;
+}
+
+button:hover {
+    background-color: white;
+    border: 1px solid chocolate ;
+    color: chocolate;
+    cursor: pointer;
+
+}
+.sticky {
+    padding: 30px 0px;
+    
+}
+
