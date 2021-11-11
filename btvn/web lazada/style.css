@@ -33,7 +33,7 @@
   .menu-icon {
     position: absolute;
     right: 8px;
-    top: 3px;
+    top: 6px;
     font-size: 14px;
     color: #757575;
     display: none;
@@ -45,6 +45,7 @@
     top: 0;
     left: 100%;
     width: 190px;
+    height: 324px;
   
     display: none;
   }
@@ -54,6 +55,7 @@
   .menu-item:hover > a .menu-icon,
   .menu-item:hover .sub-menu-list {
     display: block;
+
   }
   
   .menu-item a {
@@ -71,6 +73,7 @@
   .menu-item:hover > a .menu-icon,
   .menu-item:hover > a {
     color: orange;
+    background-color: #EFF0F5;
   }
 
   .sub2-menu-list a {
@@ -84,5 +87,3 @@
     text-overflow: ellipsis;  
     white-space: nowrap
   }
-
- 
