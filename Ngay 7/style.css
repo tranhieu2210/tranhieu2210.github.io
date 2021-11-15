@@ -1,0 +1,38 @@
+* {
+     margin: 0;
+     padding: 0%;
+     box-sizing: border-box;
+}
+.heart {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:red;
+    font-size: 200PX;
+}
+
+
+
+.heart a {
+    animation-name: move;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    color: red;
+}
+
+
+@keyframes move {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+    
+}
+
+

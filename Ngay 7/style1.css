@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+}
+
+.snow  {
+    display: inline-block;
+    color: white;
+    font-size: 10px;
+    animation-name: snowanimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    margin-left: 18vh;
+
+}
+@keyframes snowanimation {
+    0% {
+        transform: translate(0, 0);
+    }
+    
+    100% {
+        transform: translate(50vh, 100vh);
+    }
+}
+    
+
+.snow1  {
+    display: inline-block;
+    color: white;
+    font-size: 10px;
+    animation-name: snowanimation1;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    margin-left: 18vh;
+}
+@keyframes snowanimation1 {
+    0% {
+        transform: translate(50, 0);
+    }
+    
+    100% {
+        transform: translate(30vh, 60vh);
+    }
+}
