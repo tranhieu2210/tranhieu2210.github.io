@@ -199,8 +199,11 @@
     margin-left: 270px;
     
 }
-.product1 {
+.product1,
+.product2,
+.product3 {
     overflow: hidden;
+    position: relative;
 }
 .product1 p {
     width: 270px;
@@ -247,7 +250,9 @@ hr {
     width: 60%;
     margin-top: -45px;
 }
-.product1 .dec {
+.product1 .dec, 
+.product2 .dec,
+.product3 .dec{
     
     background-color: #c00;
     width: 167px;
@@ -260,7 +265,14 @@ hr {
     position: absolute;
     margin-left: -90px;
     margin-top: -150px;
-    
+    z-index: 2;
+}
+
+.product1:hover .dec,
+.product2:hover .dec,
+.product3:hover .dec {
+    transform: translate(0px, 0px);
+    transition: transform ease 0.35s;
 }
 
 
@@ -291,6 +303,10 @@ hr {
       display: flex; 
       flex-wrap: wrap   
   }
+
+  .footer1 ul a {
+      text-decoration: none;
+  }
   
   .heading {
     font-size: 14px;
@@ -312,11 +328,16 @@ hr {
 
   
   .item,
-  .item a {
+  .item2 {
     color: #212121;
     font-size: 14px;
     line-height: 1.5;
     padding: 4px 0;
+  }
+
+  .item:hover {
+      color: #c00;
+      text-decoration: underline;
   }
   
 
@@ -368,6 +389,7 @@ hr {
     color: #fff;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .hotline {
@@ -383,4 +405,10 @@ hr {
 
 .thongtinkhach  {
     width: 380px;
+}
+.email {
+    color: #c00;
+    font-size: 14px;
+    line-height: 20px;
+
 }
