@@ -23,6 +23,19 @@
     padding-left: 400px;
     align-items: center;
     position: relative;
+    
+}
+.tieude a {
+    text-decoration: none;
+}
+.tieude ul li:hover {
+    color: #c00;
+}
+.tieude2 ul li:hover {
+    background-color: #9d0202;
+}
+.tieude2 a {
+    text-decoration: none;
 }
 
 .tieude ul li {
@@ -178,12 +191,16 @@
 .product {
     display: flex;
     width: 1200px;
-    height: 360px;
+    height: 300px;
     color: #212529;
     font-family: 'Roboto', sans-serif;
     padding-left: 100px;
     margin-right: 30px;
     margin-left: 270px;
+    
+}
+.product1 {
+    overflow: hidden;
 }
 .product1 p {
     width: 270px;
@@ -191,6 +208,7 @@
     color: #c00;
     font-weight: bold;
     margin-right: 35px;
+    margin-bottom: 5px;
 }
 .product1 img {
     width: 270px;
@@ -203,6 +221,7 @@
     color: #c00;
     font-weight: bold;
     margin-right: 35px;
+    margin-bottom: 5px;
 }
 .product2 img {
     width: 270px;
@@ -215,6 +234,7 @@
     color: #c00;
     font-weight: bold;
     margin-right: 35px;
+    margin-bottom: 5px;
 }
 .product3 img {
     width: 270px;
@@ -226,6 +246,21 @@ hr {
     margin-left: 370px;
     width: 60%;
     margin-top: -45px;
+}
+.product1 .dec {
+    
+    background-color: #c00;
+    width: 167px;
+    height: 40px;
+    color: #fff;
+    padding-top: 10px;
+    transform: translateY(220px);   
+    border-radius: 30px;
+    padding-left: 40px;
+    position: absolute;
+    margin-left: -90px;
+    margin-top: -150px;
+    
 }
 
 
@@ -244,7 +279,7 @@ hr {
     padding: 60px 10px;
     background-color: #f3f3f3;
     font-family: 'Roboto', sans-serif;
-    width: 2500px;
+    width: 100%;
     height: 700px;
   }
 
