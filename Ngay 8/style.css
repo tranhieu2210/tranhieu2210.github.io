@@ -129,7 +129,7 @@
     font-weight: 400;
     line-height: 1.5;
     text-align: left;
-    margin-left: 370px;
+    margin-left: 7%;
     font-family: 'Roboto', sans-serif;
     display: flex;
     margin-bottom: 50px;
@@ -150,7 +150,7 @@
     text-align: left;
     color: #d2d2d2;
     max-width: 1200px;
-    margin-left: 370px;
+    margin-left: 7%;
     
 }
 
@@ -161,7 +161,7 @@
     
     padding-top: 50px;
     padding-bottom: 22px;
-    margin-left: 370px;
+    margin-left: 7%;
 }
 
 
@@ -196,7 +196,7 @@
     font-family: 'Roboto', sans-serif;
     padding-left: 100px;
     margin-right: 30px;
-    margin-left: 270px;
+    
     
 }
 .product1,
@@ -298,7 +298,7 @@ hr {
   .footer1 {
       width: 1580px;
       height: 300px;
-      padding-left: 370px;
+      padding-left: 7%;
       float: left;
       display: flex; 
       flex-wrap: wrap   
