@@ -67,3 +67,8 @@ alert(b + a);
 console.log(alert(b + a))   
 
 console.log(alert(a + name))                     
+
+
+
+const MAX_DAY_OF_MONTH = 31;
+MAX_DAY_OF_MONTH = 32;
