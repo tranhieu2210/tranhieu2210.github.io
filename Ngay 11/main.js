@@ -292,3 +292,6 @@ function saochepnhieulan(c, number) {
 }
 
 console.log(saochepnhieulan('Hieu', 5))
+
+
+
