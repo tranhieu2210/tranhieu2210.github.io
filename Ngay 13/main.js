@@ -69,6 +69,3 @@ function checkArrChan(arr) {
     }
 }
 
-
-
-
