@@ -197,5 +197,8 @@ function maxMale(arr) {
     let maleArr = arr.filter(student => student.sex == 'M');
     let newString = maleArr.sort((a,b) => a.grade - b.grade);
     return newString.filter(s)
+    
 
 }
+
+
