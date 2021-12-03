@@ -197,20 +197,9 @@ function maxMale(arr) {
     let maleArr = arr.filter(student => student.sex == 'M');
     let newString = maleArr.sort((a,b) => a.grade - b.grade);
     return newString.filter(s)
+    
 
 }
 
 
-const obj = {a : "one", b : "two", a:"three"};
-console.log(obj);
 
-function sum(num1, num2=num1) {
-    console.log(num1+num2);
-}
-sum(10)
-
-
-let number = 0;
-console.log(number++);
-console.log(++number);
-console.log(number);
