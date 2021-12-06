@@ -77,3 +77,13 @@ function checkString(string) {
 }
 
 console.log(checkString('Race car'));
+
+
+
+function abc(str) {
+    let newString = {}
+    // newString= str.length
+    return newString= str.length
+}
+
+console.log(abc('123456'));
