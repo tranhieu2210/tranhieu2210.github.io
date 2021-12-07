@@ -10,7 +10,7 @@ text.style.color = '#777'
 
 text.style.fontSize = '2rem'
 
-text.textContent = 'Tôi có thể làm <em> bất cứ điều gì </em> tôi muốn với JavaScript.'
+text.innerHTML  = 'Tôi có thể làm <em> bất cứ điều gì </em> tôi muốn với JavaScript.'
 
 
 
@@ -22,7 +22,7 @@ text.textContent = 'Tôi có thể làm <em> bất cứ điều gì </em> tôi m
     <li>Item 3</li>
 </ul> */}
 
-const convertLiColor = document.querySelectorAll('li')
+const convertLiColor = document.querySelectorAll('#listO li')
 
 convertLiColor.forEach(li => li.style.color = 'blue')
 
