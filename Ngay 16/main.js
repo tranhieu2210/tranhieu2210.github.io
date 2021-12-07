@@ -129,7 +129,7 @@ function getResult(time, x) {
     return convertToSecond(sumSec)
 }
 
-console.log(getResult("0:46:50", 7));
+console.log(getResult("1:46:50", 7));
 
 
 // cách làm : đổi thời gian từ giờ sang giây, rồi cộng với số giây sau thời điểm time, rồi quy đổi ngược lại thành dạng giờ
