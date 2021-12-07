@@ -25,6 +25,7 @@
   
   .color-violet {
     color: var(--violet-color);
+    font-size: 16px;
   }
   
   .color-yellow {
@@ -68,12 +69,7 @@
   
   .heading-h5 {
     font-size: 20px;
-  }
-  
-  .p-heading {
-    color: var(--text-color);
-    color: blue;
-    margin-left: -10px;
+    color: #42434b;
   }
   
   p,
@@ -193,6 +189,7 @@
     font-size: 20px;
     margin: 35px 164px;
     color: var(--text-color);
+    line-height: 35px;
   }
   
   .about {
@@ -397,7 +394,8 @@
   /* bestpre */
   
   .bestpre {
-    padding: 60px 0;
+    padding-top: 60px;
+    padding-bottom: 150px;
   }
   .facility .heading-h2,
   .bestpre .heading-h2 {
@@ -445,10 +443,13 @@
   
   .facility .heading-h4 {
     color: #fff;
+    padding-top: 30px;
   }
   
   .facility .heading-h2 {
     margin: 10px 0 20px;
+    color: #fff;
+    padding-bottom: 30px;
   }
   
   .facility .image {
@@ -475,6 +476,7 @@
     margin: 0px 0 30px;
     line-height: 1.7;
     font-size: 18px;
+    color: #42434b;
   }
   
   /* contact */
@@ -521,8 +523,12 @@
   .footer .item h6,
   .footer .item p {
     font-size: 14px;
+    
   }
-  
+
+ .footer .item h6 {
+   padding-top: 80px;
+ } 
   .footer .icon {
     display: flex;
     justify-content: center;
