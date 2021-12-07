@@ -55,4 +55,27 @@ convertLiColor.forEach(li => li.style.color = 'blue')
 
 
 const ulElement = document.querySelector('#list')
+for (let  i = 8; i<= 10; i++) {
+    let li = document.createElement('li')
+    li.innerText = `Item ${i}`
+    ulElement.appendChild(li)
+}
 
+
+ulElement.firstElementChild.style.color = 'red'
+
+
+const li3 = ulElement.querySelector(':nth-child(3)')
+li3.style.backgroundColor = 'blue'
+console.log(li3);
+
+
+const li4 = ulElement.querySelector(':nth-child(4)')
+ulElement.removeChild(li4)
+
+
+const newLi = document.createElement('li')
+newLi.innerText = "Xin chào Hiếu"
+console.log(newLi);
+li3.insertAdjacentElement("afterend", newLi)
+console.log(ulElement);

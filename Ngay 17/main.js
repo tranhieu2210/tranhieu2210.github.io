@@ -1,4 +1,4 @@
-const heading = document.getElementById ('heading')
+    const heading = document.getElementById ('heading')
 
 // console.log(heading);
 
