@@ -16,15 +16,15 @@ text.innerHTML  = 'Tôi có thể làm <em> bất cứ điều gì </em> tôi mu
 
 // Câu 2. Sử dụng vòng lặp để đặt màu chữ cho tất cả thẻ li thành màu blue (tạo thẻ ul-li bằng html)
 
-{/* <ul>
+/* <ul>
     <li>Item 1</li>
     <li>Item 2</li>
     <li>Item 3</li>
-</ul> */}
+</ul> */
 
-const convertLiColor = document.querySelectorAll('#listO li')
-
-convertLiColor.forEach(li => li.style.color = 'blue')
+const ul1 = document.querySelector('ul')
+const liEle = ul1.querySelectorAll('li')
+liEle.forEach(li => li.style.color = 'blue')
 
 
 // Câu 3. Cho mã HTML có nội dung như sau (tạo thẻ ul-li bằng html):
@@ -79,3 +79,11 @@ newLi.innerText = "Xin chào Hiếu"
 console.log(newLi);
 li3.insertAdjacentElement("afterend", newLi)
 console.log(ulElement);
+
+
+
+
+
+
+
+
