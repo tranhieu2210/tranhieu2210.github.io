@@ -10,7 +10,7 @@ text.style.color = '#777'
 
 text.style.fontSize = '2rem'
 
-text.innerHTML  = 'Tôi có thể làm <em> bất cứ điều gì </em> tôi muốn với JavaScript.'
+text.innerHTML = 'Tôi có thể làm <em> bất cứ điều gì </em> tôi muốn với JavaScript.'
 
 
 
@@ -55,7 +55,7 @@ liEle.forEach(li => li.style.color = 'blue')
 
 
 const ulElement = document.querySelector('#list')
-for (let  i = 8; i<= 10; i++) {
+for (let i = 8; i <= 10; i++) {
     let li = document.createElement('li')
     li.innerText = `Item ${i}`
     ulElement.appendChild(li)
@@ -78,8 +78,70 @@ const newLi = document.createElement('li')
 newLi.innerText = "Xin chào Hiếu"
 console.log(newLi);
 li3.insertAdjacentElement("afterend", newLi)
-console.log(ulElement);
 
+
+
+// Thêm 1 nút add + 1 ô input để nhập text (tạo bằng Javascript).
+// Mỗi khi bấm nút vào nút add thêm 1 thẻ li có nội dung là nội dung trong ô input vào cuối danh sách ul
+// Trường hợp không có nội dung trong ô input mà bấm add thì cảnh báo (sử dụng alert)
+
+
+const add = document.createElement('button')
+const input = document.createElement('input')
+
+add.textContent = 'Thêm'
+input.type = 'text'
+input.placeholder = 'Nhập nội dung'
+document.body.prepend(add)
+document.body.prepend(input)
+
+function addItem(item) {
+    const li = document.createElement('li')
+    if (!item.trim()) {
+        alert('Nội dung trống')
+        return
+    }
+    li.textContent = item
+    ulElement.appendChild(li)
+}
+
+add.addEventListener('click', function () {
+    addItem(input.value)
+    input.value = ''
+})
+
+
+
+// Thêm 1 nút remove (tạo bằng Javascript). Chức năng để xóa thẻ li cuối cùng của danh sách ul
+
+const remove = document.createElement('button')
+remove.textContent = 'Xoá'
+document.body.insertBefore(remove, text)
+
+function removeLastItem() {
+    const liEle = ulElement.querySelectorAll('li')
+    if (liEle.length == 0) {
+        alert('Danh sách trống')
+        return
+    }
+    const newUl = ulElement.removeChild(liEle[liEle.length - 1])
+}
+
+remove.addEventListener('click', function () {
+    removeLastItem()
+})
+
+
+// Thêm 1 nút Hide trên đầu của danh sách ul
+
+// Khi bấm vào Hide thì ul sẽ ẩn. Đồng thời label của nút Hide => Show
+
+// Và ngược lại, khi bấm vào Show thì ul sẽ hiện. Đồng thời label của nút Show => Hide
+
+
+const hide = document.createElement('button')
+hide.textContent = 'Hide'
+ulElement.insertAdjacentElement("beforebegin", hide)
 
 
 
