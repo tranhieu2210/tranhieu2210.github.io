@@ -24,7 +24,7 @@ document.body.appendChild(facebook)
 // // bài 3. Đếm số từ có trong đoạn văn. Tạo 1 thẻ div để hiển thị số từ
 
 const numberOfstring = document.createElement('div')
-numberOfstring.innerText = 'Số từ có trong đoạn văn: ' + words.length
+numberOfstring.innerText = 'Số từ: ' + words.length
 document.body.appendChild(numberOfstring)
 
 
