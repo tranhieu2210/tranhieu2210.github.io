@@ -1,9 +1,3 @@
-// Cho mảng màu:
-
-// javascript let colors = [ '#3498db', '#9b59b6', '#e74c3c', '#2c3e50', '#d35400', ]
-
-// Yêu cầu
-
 // - Render số box = số lượng màu ra ngoài màn hình bằng js (5 box)
 
 // box được tạo bởi thẻ div, có class="box", background tương ứng với từng mã màu
@@ -12,16 +6,17 @@
 
 // Khi bấm vào box bất kỳ thì box đó biến mất, đồng thời số lượng total box giảm đi 1
 
-// Khi click vào nút "more box" thì số lượng box tăng lên 5 (tương ứng với 5 màu trong mảng colors), đồng thời số lượng total box cũng tăng lên 5
-
-
+// Khi click vào nút "more box" thì số lượng box tăng lên 5 
+// (tương ứng với 5 màu trong mảng colors), đồng thời số lượng total box cũng tăng lên 5
 
 let colors = ["#3498db", "#9b59b6", "#e74c3c", "#2c3e50", "#d35400"];
 const boxes = document.querySelector('.boxes')
 const points = document.querySelector('.points')
 const moreBoxes = document.querySelector('#btn')
 
-function addBox(color) {
+
+
+function printBox(color) {
     const div = document.createElement('div')
     div.classList.add('box')
     div.style.backgroundColor = color
@@ -33,15 +28,15 @@ function addBox(color) {
     })
 }
 
+
 function getMoreBox(arr) {
     for (const color of arr) {
-        addBox(color)
+        printBox(color)
     }
 }
 
-
 colors.forEach(color => {
-    addBox(color)
+    printBox(color)
 })
 
 

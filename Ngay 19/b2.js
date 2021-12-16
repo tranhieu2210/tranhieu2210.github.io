@@ -1,4 +1,3 @@
-
 let student_warning = {
     students: [
         {
@@ -82,3 +81,69 @@ let student_warning = {
 };
 
 // Dựa vào thông tin của object student_warning. Hãy hiển thị dự liệu tương tự như demo trong mã HTML
+
+const studentTableEl = document.querySelector('tbody')
+
+// Hiển thị thông tin lớp học
+function renderClassInfo(obj) {
+    // teachers = obj.teachers.map(teacher => {
+    //     return `<li>${teacher.name} ( ${teacher.email} - ${teacher.phone} )</li>`
+    // }).join("")
+
+    let teachers = ""
+    for (let i = 0; i < obj.teachers.length; i++) {
+        const t = obj.teachers[i];
+        teachers += `<li>${t.name} ( ${t.email} - ${t.phone} )</li>`
+    }
+
+    classInnerEl.innerHTML = `
+        <p><span>Lớp học</span> : ${obj.class}</p>
+        <p><span>Thuộc khóa học</span> : ${obj.course}</p>
+        <p><span>Danh sách giảng viên</span> :</p>
+        <ul>${teachers}</ul>
+        <p></p>
+        <p><span>Tổng số buổi</span> : ${obj.sessions}</p>
+    `
+}
+
+
+// Hiển thị thông tin học viên
+function renderStudentInfo(arr) {
+    studentTableEl.innerHTML = '';
+
+    for (let i = 0; i < arr.length; i++) {
+        const s = arr[i]; // object student
+
+        for (let j = 0; j < s.detail_info.length; j++) {
+            const d = s.detail_info[j]; // object detail_info
+
+            // Chỉ gộp hàng nếu là bản ghi đầu tiên
+            if(j == 0) {
+                studentTableEl.innerHTML += `
+                    <tr>
+                        <td rowspan="${s.total_off}">${i + 1}</td>
+                        <td rowspan="${s.total_off}">${s.name}</td>
+                        <td rowspan="${s.total_off}">${s.email}</td>
+                        <td rowspan="${s.total_off}">${s.phone}</td>
+                        <td rowspan="${s.total_off}" class="text-center">${s.total_off}/${s.sessions}</td>
+                        <td class="text-center">${d.date}</td>
+                        <td>${d.note}</td>
+                        <td>${d.teacher}</td>
+                    </tr>
+                `
+            } else {
+                studentTableEl.innerHTML += `
+                    <tr>
+                        <td class="text-center">${d.date}</td>
+                        <td>${d.note}</td>
+                        <td>${d.teacher}</td>
+                    </tr>
+                `
+            }
+
+        }
+
+    }
+}
+
+renderStudentInfo(student_warning.students)
