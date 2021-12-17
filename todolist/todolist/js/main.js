@@ -1,206 +1,185 @@
-/*
--- các chức năng:
-1. Hiển thị công việc
-2. Thêm công việc
-3. Thay đổi trạng thái công việc
-4. Xóa công việc
-5. Chỉnh sửa tên công việc
-6. Lọc công việc theo trạng thái
-*/
+// Các chức năng cần Làm
+// 1. Hiển thị công việc
+// 2. Thêm công việc
+// 3. Thay đổi trạng thái công việc
+// 4. Xóa công việc
+// 5. Sửa tên công việc
+// 6. Lọc công việc theo trạng thái
 
-// Đối tượng công việc bao gồm:
-// - id 
-// - title (tên công việc)
-// - status (trạng thái công việc)
+// Đối tượng công việc bao gồm: 
+// 1. id
+// 2. title - Tên
+// 3. status - Trạng thái
 
-let todos = []
+let todos = [];
 
-const todoListEl = document.querySelector('.todo-list');
-const todoInputEl = document.getElementById("todo-input");
-const btnAdd = document.getElementById("btn-add");
-const todoOptionEls = document.querySelectorAll(".todo-option-item input");
+const todolistEle = document.querySelector('.todo-list')
+const inputEle = document.querySelector('#todo-input')
+const btnAdd = document.querySelector('#btn-add')
 
-let idUpdate = null;
-let isUpdate = false;
+const allBtn = document.querySelector('#all')
+const unactiveBtn = document.querySelector('#unactive')
+const activeBtn = document.querySelector('#active')
+const editBtn = document.querySelector('#btn-edit')
 
 function randomId() {
-    return Math.floor(Math.random() * 100000);
+    return Math.random() * 10000
 }
 
+
 // 1. Hiển thị công việc
+
 function renderTodos(arr) {
     // Xóa hết nội dung trước khi render
-    todoListEl.innerHTML = "";
-
-    // Lọc cv theo trạng thái
-    let newArr = filterTodo(arr);
-
-    // Trường hợp mảng rỗng
-    if (newArr.length == 0) {
-        todoListEl.innerHTML = `<p class="todos-empty">Không có công việc nào trong danh sách</p>`;
+    todolistEle.innerHTML = ''
+    // TH mảng rỗng
+    if (arr.length === 0) {
+        todolistEle.innerHTML = 'Không có công việc nào trong danh sách'
         return
     }
 
-    for (let i = 0; i < newArr.length; i++) {
-        const t = newArr[i];
-        todoListEl.innerHTML += `
-            <div class="todo-item ${t.status ? "active-todo" : ""}">
-                <div class="todo-item-title">
+    for (let i = 0; i < arr.length; i++) {
+        const t = arr[i];
+
+        todolistEle.innerHTML += `
+            <div class="todo-item ${t.status ? 'active-todo' : ''}">
+                <div class="todo-item-title" >
                     <input 
                         type="checkbox" 
-                        ${t.status ? "checked" : ""}
-                        onclick="toggleStatus(${t.id})"
+                        ${t.status ? 'checked' : ''}
+                        onclick='toggleStatus(${t.id})'
                     />
                     <p>${t.title}</p>
                 </div>
                 <div class="option">
-                    <button class="btn btn-update" onclick="updateTodo(${t.id})">
-                        <img src="./img/pencil.svg" alt="icon" />
+                    <button class="btn btn-update" onclick='updateTodo(${t.id})'>
+                        <img src="./img/pencil.svg" alt="icon" >
                     </button>
-                    <button class="btn btn-delete" onclick="deleteTodo(${t.id})">
+                    <button class="btn btn-delete" onclick='deleteTodo(${t.id})'>
                         <img src="./img/remove.svg" alt="icon" />
                     </button>
                 </div>
             </div>
         `
+        
     }
+
 }
 
-function filterTodo(arr) {
-    // Lấy ra giá trị mà đang được chọn
-    let option = getOptionSelected();
-
-    switch (option) {
-        case "all": { // Tất cả công việc
-            return [...arr];
-        }
-        case "unactive": { // Công việc chưa hoàn thành
-            return arr.filter(todo => !todo.status);
-        }
-        case "active": { // Công việc đã hoàn thành
-            return arr.filter(todo => todo.status);
-        }
-        default: { // Mặc định lấy tất cả công việc
-            return [...arr];
-        }
-    }
-}
+// renderTodos(todos)
 
 // 2. Thêm công việc
-btnAdd.addEventListener('click', function () {
-    // Lấy nội dung trong ô input
-    let title = todoInputEl.value;
+function addTodos() {
+        // Lấy nội dung trong ô input
+        let inputValue = inputEle.value
 
-    // Kiểm tra nội dung
-    if (title.trim() == "") {
-        alert("Tiêu đề không được để trống");
-        return;
-    }
-
-    if (isUpdate) {
-        // -- Cập nhật công việc
-        for (let i = 0; i < todos.length; i++) {
-            if (todos[i].id == idUpdate) {
-                todos[i].title = title
-            }
+        // Kiểm tra nội dung
+        if (inputValue.trim() == '') {
+            alert('Tiêu đề không được để trống')
+            return
         }
 
-        btnAdd.innerText = "THÊM"
-
-        idUpdate = null;
-        isUpdate = false;
-
-    } else {
-        // -- Thêm công việc
         // Tạo ra công việc mới
+
         let newTodo = {
             id: randomId(),
-            title: title,
-            status: false
+            title: inputValue,
+            status: false,
         }
 
-        // Thêm vào mảng todos
-        todos.push(newTodo);
-    }
+        // Thêm vào mảng ban đầu
+        todos.push(newTodo)
 
+        // render lại giao diện
+        setDataToLocalStorage(todos)
+        inputEle.value = ''
+        inputEle.focus()
+}
 
-
-    // Render lại giao diện
-    setDataToLocalStorage(todos)
-    todoInputEl.value = ""
-})
+btnAdd.addEventListener('click', addTodos)
 
 // 3. Thay đổi trạng thái công việc
+
 function toggleStatus(id) {
-    // Cập nhật lại trạng thái công việc trong mảng todos tương ứng với id
+    // Cập nhật trạng thái công việc trong mảng todos tương ứng với id
     for (let i = 0; i < todos.length; i++) {
         if (todos[i].id == id) {
             todos[i].status = !todos[i].status
+            setDataToLocalStorage(todos)
+            return
         }
     }
-
-    // render lại giao diện
-    setDataToLocalStorage(todos)
 }
 
-// 4. Xóa công việc
+//4. Xóa công việc
+
 function deleteTodo(id) {
-    // Xóa công việc trong mảng todos tương ứng với id
     for (let i = 0; i < todos.length; i++) {
-        if (todos[i].id == id) {
-            todos.splice(i, 1)
-        }
-    }
-
-    // render lại giao diện
-    setDataToLocalStorage(todos)
-}
-
-// 5. Chỉnh sửa tên công việc
-function updateTodo(id) {
-    for (let i = 0; i < todos.length; i++) {
-        if (todos[i].id == id) {
-            todoInputEl.value = todos[i].title;
-            todoInputEl.focus();
-
-            btnAdd.innerText = "CẬP NHẬT";
-            idUpdate = id;
-            isUpdate = true;
-        }
-    }
-}
-
-// 6. Lọc công việc theo trạng thái
-todoOptionEls.forEach(input => {
-    input.addEventListener('change', function () {
-        renderTodos(todos)
-    })
-});
-
-// Lấy ra giá trị trong ô input đang được chọn
-function getOptionSelected() {
-    for (let i = 0; i < todoOptionEls.length; i++) {
-        if (todoOptionEls[i].checked) {
-            return todoOptionEls[i].value
-        }
+        const todo = todos[i];
+        if (todo.id == id) {
+            todos.splice(i ,1)
+            setDataToLocalStorage(todos)
+            return
+        }  
     }
 }
 
 // Lấy dữ liệu từ localStorage
 function getDataFromLocalStorage() {
-    // Ví dụ đã lưu mảng trong localStorage với key = "todos"
-    let value = localStorage.getItem("todos")
-    if (value) {
-        todos = JSON.parse(value)
-    } else {
-        todos = [];
-    }
+    // Ví dụ trong local đã có mảng với key = 'todos'
+    todos = JSON.parse(localStorage.getItem('todos')) || []
     renderTodos(todos)
 }
 
+window.onload = getDataFromLocalStorage
+
 function setDataToLocalStorage(arr) {
-    localStorage.setItem("todos", JSON.stringify(arr));
-    renderTodos(arr)
+    localStorage.setItem('todos', JSON.stringify(arr))
+    renderTodos(todos)
 }
 
-window.onload = getDataFromLocalStorage
+// 6. Lọc công việc theo trạng thái
+allBtn.addEventListener('click', function() {
+    renderTodos(todos)
+})
+
+unactiveBtn.addEventListener('click', function() {
+    let unactiveTodos = [...todos].filter(todo => todo.status === false)
+    renderTodos(unactiveTodos)
+})
+
+activeBtn.addEventListener('click', function() {
+    let activeTodos = [...todos].filter(todo => todo.status === true)
+    renderTodos(activeTodos)
+})
+
+// 5. Sửa tên công việc
+let idEdit
+
+function updateTodo(id) {
+    // 1. input hiện tên công việc
+    for (let i = 0; i < todos.length; i++) {
+        let todo = todos[i]
+        if (todo.id === id) {
+            idEdit = id
+            inputEle.value = todo.title
+            inputEle.focus()
+            btnAdd.classList.add('hide')
+            editBtn.classList.remove('hide')
+        }
+
+    }
+}
+
+editBtn.addEventListener('click', function() {
+    todos.forEach(todo => {
+        if (todo.id === idEdit) {
+            todo.title = inputEle.value
+        }
+    })
+    console.log(todos);
+    setDataToLocalStorage(todos)
+    inputEle.value = ''
+    btnAdd.classList.remove('hide')
+    editBtn.classList.add('hide')
+})

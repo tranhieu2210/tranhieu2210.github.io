@@ -1,17 +1,13 @@
 // Mockup dnah sách sản phẩm
 
 
-let promotionCode = [
-    {
-        name : 'ahihi',
-        value : 30000
-    },
+let promotionCode = {
+    A: 10,
+    B: 20,
+    C: 30,
+    D: 40,
+};
 
-    {
-        name : 'hello',
-        value : 0.85
-    }
-]
 let product = [
     {
         id: 1,
@@ -49,8 +45,10 @@ const optionContainer = document.querySelector('.option-container')
 const subtotal = document.querySelector('.subtotal span')
 const vat = document.querySelector('.vat span')
 const total = document.querySelector('.total span')
-const promoCodeInput = document.querySelector('#promo-code')
-const promoButton = document.querySelector('.button')
+const discount = document.querySelector('.discount');
+const discountEle = document.querySelector('.discount span');
+const btnPromotion = document.querySelector('.promotion button');
+const inputPromotion = document.querySelector('#promo-code');
 
 
 function renderProduct(arr) {
@@ -138,7 +136,43 @@ function changeTotalProduct(id, event) {
     renderProduct(product)
 }
 
-// function updateTotalMoney(arr) {
-    
-// }
 
+function checkPromotion() {
+    let value = inputPromotion.value;
+    if (promotionCode[value]) {
+        return promotionCode[value];
+    }
+    return 0;
+}
+
+
+function updateTotalMoney(arr) {
+    let totalPrice = 0;
+    let discountMoney = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        const p = arr[i];
+        totalPrice += p.quality * p.price;
+    }
+
+    let data = checkPromotion();
+
+    if (data) {
+        discountMoney = (totalPrice * data) / 100;
+        discount.classList.remove('hide');
+        alert("Áp dụng mã giảm giá thành công");
+    } else {
+        discount.classList.add('hide');
+        alert("Mã giảm giá không tồn tại");
+    }
+
+    subtotal.innerText = `${totalPrice} VNĐ`
+    vat.innerText = `${totalPrice * 0.1} VNĐ`
+    discountEle.innerText = `${discountMoney} VNĐ`
+    total.innerText = `${totalPrice * 1.1 - discountMoney} VNĐ`
+    
+}
+
+btnPromotion.addEventListener('click', function () {
+    updateTotalMoney(product);
+});
