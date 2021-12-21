@@ -63,6 +63,7 @@ let student_warning = {
             ],
         },
     ],
+
     class: "Lập trình Game 2D Canvas",
     course: "Lập trình Game",
     sessions: 14,
@@ -81,69 +82,65 @@ let student_warning = {
 };
 
 // Dựa vào thông tin của object student_warning. Hãy hiển thị dự liệu tương tự như demo trong mã HTML
+// Cho file giao diện như sau: [index.html](https://techmaster.vn/media/download/source-code/bu0s4ps51co5836g4je0)
 
-const studentTableEl = document.querySelector('tbody')
+// Yêu cầu: render ra giao diện giống như hình dựa vào thông tin object student_warning trong phần script
 
-// Hiển thị thông tin lớp học
-function renderClassInfo(obj) {
-    // teachers = obj.teachers.map(teacher => {
-    //     return `<li>${teacher.name} ( ${teacher.email} - ${teacher.phone} )</li>`
-    // }).join("")
+// ![Ảnh demo](https://techmaster.vn/media/static/9479/bu0s64s51co5836g4jeg)
+const tbody = document.querySelector('tbody')
+const classInner = document.querySelector('.class-inner')
 
-    let teachers = ""
-    for (let i = 0; i < obj.teachers.length; i++) {
-        const t = obj.teachers[i];
-        teachers += `<li>${t.name} ( ${t.email} - ${t.phone} )</li>`
-    }
+function printStudentInfo(students) {
+    students.forEach((student, index) => { 
+        const tr = document.createElement('tr');
+        
+        tr.innerHTML = `
+            <td rowspan="${student.total_off}">${index + 1}</td>
+            <td rowspan="${student.total_off}">${student.name}</td>
+            <td rowspan="${student.total_off}">${student.email}</td>
+            <td rowspan="${student.total_off}">${student.phone}</td>
+            <td rowspan="${student.total_off}" class="text-center">${student.total_off}/${student.sessions}</td>
+            <td class="text-center">${student.detail_info[0].date}</td>
+            <td>${student.detail_info[0].note}</td>
+            <td>${student.detail_info[0].teacher}</td> 
+        `
+        tbody.appendChild(tr)
 
-    classInnerEl.innerHTML = `
-        <p><span>Lớp học</span> : ${obj.class}</p>
-        <p><span>Thuộc khóa học</span> : ${obj.course}</p>
+        if (student.detail_info.length > 1) {
+            for (let i = 1; i < student.detail_info.length; i++) {
+                let tr = document.createElement('tr');
+
+                tr.innerHTML = `
+                    <td class="text-center">${student.detail_info[i].date}</td>
+                    <td>${student.detail_info[i].note}</td>
+                    <td>${student.detail_info[i].teacher}</td> 
+                `
+
+                tbody.appendChild(tr)
+            }
+            
+        }
+    })
+}
+
+function printClassInfo(classInfo) {
+    const teachers = classInfo.teachers.map(teacher => {
+        return `
+            <li>${teacher.name} (${teacher.email} - ${teacher.phone})</li>
+        `
+    }).join('')
+
+    classInner.innerHTML = `
+        <p><span>Lớp học</span> : ${classInfo.class}</p>
+        <p><span>Thuộc khóa học</span> : ${classInfo.course}</p>
         <p><span>Danh sách giảng viên</span> :</p>
         <ul>${teachers}</ul>
         <p></p>
-        <p><span>Tổng số buổi</span> : ${obj.sessions}</p>
+        <p><span>Tổng số buổi</span> : ${classInfo.sessions}</p>
     `
 }
 
+printStudentInfo(student_warning.students)
+printClassInfo(student_warning)
 
-// Hiển thị thông tin học viên
-function renderStudentInfo(arr) {
-    studentTableEl.innerHTML = '';
-
-    for (let i = 0; i < arr.length; i++) {
-        const s = arr[i]; // object student
-
-        for (let j = 0; j < s.detail_info.length; j++) {
-            const d = s.detail_info[j]; // object detail_info
-
-            // Chỉ gộp hàng nếu là bản ghi đầu tiên
-            if(j == 0) {
-                studentTableEl.innerHTML += `
-                    <tr>
-                        <td rowspan="${s.total_off}">${i + 1}</td>
-                        <td rowspan="${s.total_off}">${s.name}</td>
-                        <td rowspan="${s.total_off}">${s.email}</td>
-                        <td rowspan="${s.total_off}">${s.phone}</td>
-                        <td rowspan="${s.total_off}" class="text-center">${s.total_off}/${s.sessions}</td>
-                        <td class="text-center">${d.date}</td>
-                        <td>${d.note}</td>
-                        <td>${d.teacher}</td>
-                    </tr>
-                `
-            } else {
-                studentTableEl.innerHTML += `
-                    <tr>
-                        <td class="text-center">${d.date}</td>
-                        <td>${d.note}</td>
-                        <td>${d.teacher}</td>
-                    </tr>
-                `
-            }
-
-        }
-
-    }
-}
-
-renderStudentInfo(student_warning.students)
+console.log(student_warning.students[0]);
