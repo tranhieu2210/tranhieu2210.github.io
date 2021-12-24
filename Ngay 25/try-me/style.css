@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    width: 820px;
+    margin: 0 auto;
+}
+
+.row {
+    width: 720px;
+    margin: 0 auto;
+}
+
+.header {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    height: 80px;
+}
+
+.logo img {
+    width: 64px;
+    height: 32px;
+}
+
+.hamburger-icon span {
+    display: inline-block;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+
+.container {
+    width: 820px;
+    margin: 0 auto;
+    background-color: blue;
+}
+
+.content-1 img {
+    width: 720px;
+    height: 345px;
+}
+
+
