@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+#get-started {
+    background-image: linear-gradient(to right, #FE985B, #FE4FA7);
+    padding: 30px 0;
+}
+
+#get-started h2 {
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 60px;
+    color: #fff;
+}
+
+#get-started p {
+    font-size: 20px;
+    color: #fff;
+    line-height: 30px;
+    margin:  50px auto;
+    width: 550px;
+}
+
+#get-started button {
+    font-size: 18px;
+    color: #464646;
+    padding: 17px 53px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: none;
+}
+
+#banner .container {
+    text-align: center;
+}
+
+#marketing img {
+    height: 60px;
+    width: 60px;
+}
+
+
+#marketing h4 {
+    margin-top: 20px;
+    margin-bottom: 14px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #414141;
+}
+
+#marketing p {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 28px;
+    color: #6c6c6c;
+}
+
+
+#banner {
+    height: 841px;
+    background: url(./image/2.png) no-repeat center;
+    background-size: cover;
+    color: #fff;
+}
+
+#banner h4 {
+   font-weight: bold;
+   font-size: 24px;
+   line-height: 29px;
+   padding-top: 35px;
+   padding-left: 215px;
+   color: #fff;
+}
+
+
+#banner h1 {
+    font-weight: bold;
+    font-size: 55px;
+    line-height: 60px;
+    text-align: center;
+    margin-top: 23%;
+    color: #fff;
+}
+
+#banner p {
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+    width: 536px;
+    color: #fff;
+    margin: auto;
+    padding: 18px 0 43px;
+}
+
+
+
+
+#banner input::-webkit-input-placeholder {
+    color: #ffffff;
+  }
+
+
+  #banner input {
+    width: 375px;
+    height: 53px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    mix-blend-mode: normal;
+    border: none;
+ 
+  }
+
+#banner form {
+    width: 1021px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+#banner button:focus,
+#banner input:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+#banner button {
+  width: 192px;
+  height: 53px;
+  background: linear-gradient(90deg, #fe985b 2.77%, #fe4fa7 100%);
+  border-radius: 4px;
+  outline: none;
+  border: none;
+}
+
+#banner .item {
+  display: inline-block;
+}
