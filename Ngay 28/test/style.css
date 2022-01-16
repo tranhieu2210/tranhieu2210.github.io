@@ -11,10 +11,12 @@ body {
 .wrapper {
     height: 1095px;
     background: url(./image/bg-top.png) no-repeat;
-   
+   background-size: cover;
 }
 
-
+.content {
+   margin-bottom: -700px;
+}
 
 .header-inner {
     padding-top: 60px;
@@ -44,11 +46,12 @@ body {
 
 .img-ip img {
     display: block;
+    position: relative;
     
 }
 
 .ip1 {
-    position: relative;
+    position: absolute;
     top: 180px;
     right: 18%;
 }
@@ -56,8 +59,8 @@ body {
 
 .ip2 {
     position: absolute;
-    left: 24%;
-    top: 230px;
+    left: 12%;
+    top: -650px;
 }
 
 .text p {
@@ -375,6 +378,7 @@ body {
     margin-top: 200px;
     background: url(./image/Rectangle\ 7.png) no-repeat;
     background-position: 0 80px ;
+    background-size: cover;
     
 }
 
