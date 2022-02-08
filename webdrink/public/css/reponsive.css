@@ -1,0 +1,10 @@
+@media (min-width: 992px) {
+    .header-meta-list div {
+        padding: 0 4.2%;
+
+    }
+    .col-md-12 {
+        width: 100%;
+    }
+}
+
