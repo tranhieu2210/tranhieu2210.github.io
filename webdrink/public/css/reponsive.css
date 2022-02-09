@@ -8,3 +8,17 @@
     }
 }
 
+@media (min-width: 992px) {
+    .home_brands .brand_1 .brand_img {
+        margin-top: -5px;
+    }
+    
+}
+
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1200px;
+    }
+    
+}
