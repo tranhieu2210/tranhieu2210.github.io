@@ -60,7 +60,11 @@ function renderProduct(arr) {
         const t = arr[i];
         shoppingCartElement.innerHTML += `
         <div class="box">
-        <i class="fas fa-times"  onclick="deleteProduct(${t.id})"></i>
+        <div class="remove">
+        <span class="close" onclick="deleteProduct(${t.id})">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </span>
+    </div>
         <img src=${t.image}>
         <div class="content">
             <h3>${t.name}</h3>
