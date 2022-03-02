@@ -4,7 +4,6 @@ let previewBox = preveiwContainer.querySelectorAll('.preview');
 
 document.querySelectorAll('.popular .box-container .box').forEach(box =>{
     box.onclick = () =>{
-        console.log(123);
     preveiwContainer.style.display = 'flex';
     let name = box.getAttribute('data-name');
     previewBox.forEach(preview =>{
