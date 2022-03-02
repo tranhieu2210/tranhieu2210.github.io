@@ -1,6 +1,7 @@
 let preveiwContainer = document.querySelector('.products-preview');
 let previewBox = preveiwContainer.querySelectorAll('.preview');
 
+
 document.querySelectorAll('.popular .box-container .box').forEach(box =>{
     box.onclick = () =>{
         console.log(123);
@@ -21,3 +22,4 @@ previewBox.forEach(close =>{
     preveiwContainer.style.display = 'none';
   };
 });
+

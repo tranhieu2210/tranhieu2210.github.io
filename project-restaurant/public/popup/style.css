@@ -174,3 +174,47 @@ a {
    }
 
 }
+
+
+
+
+
+.promotion {
+	float: left;
+	width: 100%;
+	margin-top: 1.5rem;
+}
+
+.promotion>label {
+	float: left;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+
+.promotion>input {
+	float: left;
+	width: 30%;
+	font-size: 1rem;
+	padding: 1rem 1.5rem;
+	border: 2px solid #DDD;
+}
+
+.promotion:hover>input {
+	border-color: #FC921D;
+}
+
+.promotion>button {
+	float: left;
+	width: 10%;
+	padding: 1rem 0.5rem;
+}
+
+.promotion:hover>button {
+	border-color: #FC921D;
+	background-color: #FC921D;
+}
+
+.promotion>button::after {
+	content: "\276f";
+	font-size: 1rem;
+}
