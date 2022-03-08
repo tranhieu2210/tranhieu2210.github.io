@@ -85,7 +85,6 @@ section {
   display: flex;
   align-items: center;
   font-size: 2.5rem;
-  margin-bottom: 3rem;
   padding: 1.2rem 0;
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
   color: #222;
@@ -363,7 +362,7 @@ section {
 
 .shopping-cart-container .products-container .box-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
   gap: 1.5rem;
   padding: 1.5rem;
 }
@@ -418,7 +417,8 @@ section {
   margin: .7rem 0;
 }
 
-.shopping-cart-container .cart-total {
+.shopping-cart-container .cart-total,
+.shopping-cart-container .info {
   margin-top: 2rem;
   border: 0.1rem solid rgba(0, 0, 0, 0.2);
   border-radius: .5rem;
@@ -438,6 +438,7 @@ section {
 .shopping-cart-container .cart-total .box h3 span {
   color: #27ae60;
 }
+
 
 .login-form-container {
   position: fixed;
@@ -890,13 +891,15 @@ section {
   margin-top: .5rem;
 }
 
-.order form {
+.order form, 
+.shopping-cart-container form {
   background: #f7f7f7;
   padding: 2rem;
   border-radius: .5rem;
 }
 
-.order form .flex {
+.order form .flex,
+.shopping-cart-container form .flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -904,17 +907,21 @@ section {
   justify-content: space-between;
 }
 
-.order form .flex .inputBox {
+.order form .flex .inputBox, 
+.shopping-cart-container form .flex .inputBox{
   width: 49%;
   padding: .7rem 0;
 }
 
-.order form .flex span {
+.order form .flex span, 
+.shopping-cart-container form .flex span{
   font-size: 1.7rem;
   color: #666;
 }
 
-.order form .flex input, .order form .flex textarea {
+.order form .flex input, .order form .flex textarea,
+.shopping-cart-container form .flex input
+ {
   width: 100%;
   margin-top: .5rem;
   padding: 1rem 1.2rem;
@@ -942,6 +949,8 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 1.5rem;
 }
+
+
 
 .blogs .box-container .box {
   border-radius: .5rem;
