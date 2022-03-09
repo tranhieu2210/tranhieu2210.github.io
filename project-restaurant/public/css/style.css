@@ -27,10 +27,6 @@ html::-webkit-scrollbar-track {
   background: #fff;
 }
 
-html::-webkit-scrollbar-thumb {
-  background: #27ae60;
-  border-radius: 5rem;
-}
 
 section {
   padding: 2rem 9%;

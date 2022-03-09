@@ -10,35 +10,35 @@ let product = [
     {
         id: 1,
         name: "Burger Tex Supreme",
-        image: "image/menu-1.png",
+        image: "/project-restaurant/image/menu-1.png",
         price: 55000,
         quality: 1
     },
     {
         id: 2,
         name: "Pizza Thập Cẩm",
-        image: "image/menu-2.png",
+        image: "/project-restaurant/image/menu-2.png",
         price: 140000,
         quality: 1
     },
     {
         id: 3,
         name: "Bánh Cuộn Mexicana",
-        image: "image/menu-3.jpg",
+        image: "/project-restaurant/image/menu-3.jpg",
         price: 60000,
         quality: 1
     },
     {
         id: 4,
         name: "Bánh Mì Thập Cẩm",
-        image: "image/menu-4.png",
+        image: "/project-restaurant/image/menu-4.png",
         price: 45000,
         quality: 1
     },
     {
         id: 5,
         name: "Khoai Tây Chiên",
-        image: "image/menu-5.png",
+        image: "/project-restaurant/image/menu-5.png",
         price: 50000,
         quality: 1
     }
