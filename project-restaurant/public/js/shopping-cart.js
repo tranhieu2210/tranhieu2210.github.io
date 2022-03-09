@@ -80,14 +80,14 @@ function renderProduct(arr) {
             <input type="number" name="" value="${t.quality}">
             <br>
             <span> giá : </span>
-            <span class="price"> ${(t.price)} </span>
+            <span class="price"> ${t.price.toLocaleString()}đ </span>
         </div>
     </div>
     `
 
     }
-    subtotal.innerText = `${totalPrice} VNĐ`
-    total.innerText = `${totalPrice} VNĐ`
+    subtotal.innerText = `${totalPrice.toLocaleString()} `
+    total.innerText = `${totalPrice.toLocaleString()} `
 }
 
 
@@ -139,9 +139,9 @@ function updateTotalMoney(arr) {
         alert("Mã giảm giá không tồn tại");
     }
 
-    subtotal.innerText = `${totalPrice} VNĐ`
-    discountEle.innerText = `${discountMoney} VNĐ`
-    total.innerText = `${totalPrice - discountMoney} VNĐ`
+    subtotal.innerText = `${totalPrice} `
+    discountEle.innerText = `${discountMoney} `
+    total.innerText = `${totalPrice - discountMoney} `
     
 }
 
