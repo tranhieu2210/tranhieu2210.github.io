@@ -1027,6 +1027,34 @@ section {
   line-height: 2;
 }
 
+.blogs1 {
+  background-color: #f3f3f3;
+  margin : 0 10%;
+}
+
+.blogs1 .heading img {
+  width: 40%;
+}
+
+.blogs1 .content span {
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.blogs1 .content h3 {
+  padding-top: 3rem;
+  font-size: 3rem;
+}
+
+.blogs1 .content p {
+  font-size: 2rem;
+  padding: 1.4rem 0;
+}
+
+.blogs1 .content img {
+  margin-left: 17%;
+}
+
 .footer {
   background: #f7f7f7;
 }
