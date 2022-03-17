@@ -97,9 +97,6 @@ buyBtns.forEach(item => {
     })
 })
 
-console.log(listProducts);
-
-
 
 function renderProduct(arr) {
     // Clear nội dung
@@ -145,7 +142,6 @@ function deleteProduct(id) {
     listProducts.forEach((item, index) => {
         if (item.id == id) {
             listProducts.splice(index, 1)
-            console.log(index);
             localStorage.setItem('productList', JSON.stringify(listProducts))
             return
         }
