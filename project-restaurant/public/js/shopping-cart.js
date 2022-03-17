@@ -9,39 +9,61 @@ let promotionCode = {
 let product = [
     {
         id: 1,
-        name: "Burger Tex Supreme",
-        image: "/project-restaurant/image/menu-1.png",
-        price: 55000,
+        name: "Sủi Cảo",
+        image: "/project-restaurant/public/image/food-1.png",
+        price: 100000,
         quality: 1
     },
     {
         id: 2,
-        name: "Pizza Thập Cẩm",
-        image: "/project-restaurant/image/menu-2.png",
-        price: 140000,
+        name: "burger tex supreme",
+        image: "/project-restaurant/public/image/food-2.png",
+        price: 63000,
         quality: 1
     },
     {
         id: 3,
-        name: "Bánh Cuộn Mexicana",
-        image: "/project-restaurant/image/menu-3.jpg",
-        price: 60000,
+        name: "Seafood Pesto",
+        image: "/project-restaurant/public/image/food-3.png",
+        price: 199000,
         quality: 1
     },
     {
         id: 4,
-        name: "Bánh Mì Thập Cẩm",
-        image: "/project-restaurant/image/menu-4.png",
-        price: 45000,
+        name: "Black Burger",
+        image: "/project-restaurant/public/image/food-4.png",
+        price: 99000,
         quality: 1
     },
     {
         id: 5,
-        name: "Khoai Tây Chiên",
-        image: "/project-restaurant/image/menu-5.png",
-        price: 50000,
+        name: "Veggie Delight",
+        image: "/project-restaurant/public/image/food-5.png",
+        price: 199000,
+        quality: 1
+    },
+    {
+        id: 6,
+        name: "Chicken Supreme",
+        image: "/project-restaurant/public/image/food-6.png",
+        price: 199000,
+        quality: 1
+    },
+    {
+        id: 7,
+        name: "Burger Mexicana",
+        image: "/project-restaurant/public/image/food-7.png",
+        price: 63000,
+        quality: 1
+    },
+    {
+        id: 8,
+        name: "Chicken Black Pepper",
+        image: "/project-restaurant/public/image/food-8.png",
+        price: 199000,
         quality: 1
     }
+    
 ]
 
 
@@ -54,6 +76,28 @@ const discount = document.querySelector('.discount');
 const discountEle = document.querySelector('.discount span');
 const btnPromotion = document.querySelector('.promotion button');
 const inputPromotion = document.querySelector('#promo-code');
+const xemthemBtn = document.querySelectorAll('.xemthemBtn')
+const buyBtns = document.querySelectorAll('.buy')
+const cartBtns = document.querySelectorAll('.cart')
+const listProducts = JSON.parse(localStorage.getItem('productList')) || []
+const boxContainer = document.querySelector('.box-container')
+const overlay = document.querySelector('.products-preview')
+
+
+buyBtns.forEach(item => {
+    item.addEventListener('click', function(e) {
+        let box = e.target.closest('.preview')
+        let boxId = box.getAttribute('data-target')
+        let buyPro = product.find(pro => pro.id == boxId)
+        listProducts.push(buyPro)
+        localStorage.setItem('productList', JSON.stringify(listProducts))
+        renderProduct(listProducts)
+        box.classList.remove('active')
+        overlay.style.display = 'none'
+    })
+})
+
+console.log(listProducts);
 
 
 
@@ -74,10 +118,10 @@ function renderProduct(arr) {
         </span>
     </div>
         <img src=${t.image}>
-        <div class="content">
+        <div class="content" >
             <h3>${t.name}</h3>
             <span> số lượng : </span>
-            <input type="number" name="" value="${t.quality}">
+            <input onchange="changeTotalProduct(${t.id}, event, ${t.quality})" type="number" name="" value="${t.quality}">
             <br>
             <span> giá : </span>
             <span class="price"> ${t.price.toLocaleString()}đ </span>
@@ -91,22 +135,43 @@ function renderProduct(arr) {
 }
 
 
-
-
-
-renderProduct(product)
-
+renderProduct(listProducts)
 
 
 // Xoá sản phẩm
 function deleteProduct(id) {
     // Duyệt mảng product để tìm mảng cần xoá
-    for (let i = 0; i < product.length; i++) {
-        if (product[i].id == id) {
-            product.splice(i, 1)
+    
+    listProducts.forEach((item, index) => {
+        if (item.id == id) {
+            listProducts.splice(index, 1)
+            console.log(index);
+            localStorage.setItem('productList', JSON.stringify(listProducts))
+            return
         }
+    })
+    renderProduct(listProducts)
+}
+
+
+
+function changeTotalProduct(id, event, quality) {
+    if ( Number(event.target.value) < 0) {
+        alert ( "Nhập lại")
+        event.target.value = quality
+        return
     }
-    renderProduct(product)
+    for (let i = 0; i < listProducts.length; i++) {
+        if (listProducts[i].id == id) {
+            listProducts[i].quality = Number(event.target.value)
+        }
+        if (Number(event.target.value) == 0) {
+            deleteProduct(id)
+        } 
+
+    }
+    localStorage.setItem('productList', JSON.stringify(listProducts))
+    renderProduct(listProducts)
 }
 
 
@@ -149,4 +214,5 @@ btnPromotion.addEventListener('click', function () {
     updateTotalMoney(product);
 });
 
+// click xem thêm
 

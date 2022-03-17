@@ -89,7 +89,7 @@ function renderProduct(arr) {
                     <div class="col right">
                         <div class="quantity"
                         onchange="changeTotalProduct(${t.id}, event)">
-                            <input type="number" class="quantity" value=${t.quality}>
+                            <input type="number"  class="quantity" value=${t.quality}>
                         </div>
     
                         <div class="remove">

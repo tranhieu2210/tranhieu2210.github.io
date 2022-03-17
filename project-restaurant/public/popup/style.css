@@ -128,7 +128,7 @@ a {
    margin-top: 1rem;
 }
 
-.products-preview .preview .buttons a{
+.products-preview .preview .buttons button{
    flex:1 1 16rem;
    padding:1rem;
    font-size: 1.8rem;
@@ -136,16 +136,16 @@ a {
    border:.1rem solid #444;
 }
 
-.products-preview .preview .buttons a.cart{
+.products-preview .preview .buttons button.cart{
    background: #444;
    color:#fff;
 }
 
-.products-preview .preview .buttons a.cart:hover{
+.products-preview .preview .buttons button.cart:hover{
    background: #111;
 }
 
-.products-preview .preview .buttons a.buy:hover{
+.products-preview .preview .buttons button.buy:hover{
    background: #444;
    color:#fff;
 }
