@@ -1,0 +1,7 @@
+.container {
+    flex-basis: 24;
+}
+
+image {
+    max-width: 100%;
+}
