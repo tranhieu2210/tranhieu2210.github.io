@@ -63,7 +63,7 @@ let product = [
         price: 199000,
         quality: 1
     }
-    
+
 ]
 
 
@@ -85,7 +85,7 @@ const overlay = document.querySelector('.products-preview')
 
 
 buyBtns.forEach(item => {
-    item.addEventListener('click', function(e) {
+    item.addEventListener('click', function (e) {
         let box = e.target.closest('.preview')
         let boxId = box.getAttribute('data-target')
         let buyPro = product.find(pro => pro.id == boxId)
@@ -138,7 +138,7 @@ renderProduct(listProducts)
 // Xoá sản phẩm
 function deleteProduct(id) {
     // Duyệt mảng product để tìm mảng cần xoá
-    
+
     listProducts.forEach((item, index) => {
         if (item.id == id) {
             listProducts.splice(index, 1)
@@ -152,8 +152,8 @@ function deleteProduct(id) {
 
 
 function changeTotalProduct(id, event, quality) {
-    if ( Number(event.target.value) < 0) {
-        alert ( "Nhập lại")
+    if (Number(event.target.value) <= 0) {
+        alert("Số lượng sản phẩm tối thiểu là 1")
         event.target.value = quality
         return
     }
@@ -163,7 +163,7 @@ function changeTotalProduct(id, event, quality) {
         }
         if (Number(event.target.value) == 0) {
             deleteProduct(id)
-        } 
+        }
 
     }
     localStorage.setItem('productList', JSON.stringify(listProducts))
@@ -192,7 +192,7 @@ function updateTotalMoney(arr) {
     let data = checkPromotion();
 
     if (data) {
-        discountMoney = (data );
+        discountMoney = (data);
         discount.classList.remove('hide');
         alert("Áp dụng mã giảm giá thành công");
     } else {
@@ -203,7 +203,7 @@ function updateTotalMoney(arr) {
     subtotal.innerText = `${totalPrice} `
     discountEle.innerText = `${discountMoney} `
     total.innerText = `${totalPrice - discountMoney} `
-    
+
 }
 
 btnPromotion.addEventListener('click', function () {
