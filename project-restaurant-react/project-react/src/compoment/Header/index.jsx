@@ -1,9 +1,14 @@
 import "./main.css"
-import "./script"
 
 const Header = () => {
+      
+        
+
+
+
+
       return (
-        <div>
+        <div className="header1">
           <header className="header">
             <a href="/project-restaurant/index.html" className="logo"> <i className="fas fa-utensils" /> Gofood </a>
             <nav className="navbar">

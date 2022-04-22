@@ -1,10 +1,12 @@
+import "./main.css"
+
 const Footer = () => {
     return (
         <section className="footer">
         <div className="newsletter">
             <h3>nhận tin</h3>
-            <form action>
-                <input type="email" name placeholder="nhập email của bạn" id />
+            <form >
+                <input type="email"  placeholder="nhập email của bạn"  />
                 <input type="submit" defaultValue="đăng kí nhận tin" />
             </form>
         </div>
