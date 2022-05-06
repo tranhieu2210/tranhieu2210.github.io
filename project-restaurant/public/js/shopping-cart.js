@@ -1,8 +1,8 @@
 let promotionCode = {
-    H10: 20000,
-    B: 20000,
-    C: 20000,
-    D: 20000,
+    H10: 10,
+    B: 20,
+    C: 30,
+    D: 40,
 };
 
 
@@ -180,6 +180,7 @@ function checkPromotion() {
 }
 
 
+
 function updateTotalMoney(arr) {
     let totalPrice = 0;
     let discountMoney = 0;
@@ -192,7 +193,7 @@ function updateTotalMoney(arr) {
     let data = checkPromotion();
 
     if (data) {
-        discountMoney = (data);
+        discountMoney = (subtotal * data ) / 100;
         discount.classList.remove('hide');
         alert("Áp dụng mã giảm giá thành công");
     } else {
@@ -206,9 +207,11 @@ function updateTotalMoney(arr) {
 
 }
 
+
 btnPromotion.addEventListener('click', function () {
     updateTotalMoney(product);
 });
+
 
 // click xem thêm
 

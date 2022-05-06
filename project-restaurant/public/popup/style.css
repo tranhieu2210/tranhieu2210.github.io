@@ -57,6 +57,7 @@ a {
    display: none;
    align-items: center;
    justify-content: center;
+   z-index: 999;
 }
 
 .products-preview .preview{
@@ -67,6 +68,7 @@ a {
    position: relative;
    margin:2rem;
    width: 40rem;
+
 }
 
 .products-preview .preview.active{
