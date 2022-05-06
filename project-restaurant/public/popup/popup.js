@@ -26,8 +26,10 @@ previewBox.forEach(close => {
 
 aw1.addEventListener('click', function () {
   alert("Đặt hàng thành công")
+  window.location = '/project-restaurant/index.html';
 })
 
 aw2.addEventListener('click', function () {
   alert("Đặt hàng thành công")
+  window.location = '/project-restaurant/index.html';
 })
