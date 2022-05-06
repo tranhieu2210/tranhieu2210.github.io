@@ -1177,6 +1177,33 @@ section {
 }
 
 
+button {
+	background-color: #27ae60;
+	border: 2px solid #27ae60;
+	color: #ffffff;
+	transition: all 0.25s linear;
+	cursor: pointer;
+}
+
+button::after {
+	position: relative;
+	right: 0;
+	content: " \276f";
+	transition: all 0.15s linear;
+}
+
+button:hover {
+	background-color: #f58551;
+	border-color: #f58551;
+}
+
+button:hover::after {
+	right: -5px;
+}
+
+button:focus {
+	outline: none;
+}
 
 
 

@@ -56,7 +56,7 @@
             <div class="box-container">
 
                 <div class="box">
-                    <div class="remove">
+                    <div class="remove" >
                         <span class="close">
                             <i class="fa fa-times" aria-hidden="true"></i>
                         </span>
@@ -72,77 +72,46 @@
                     </div>
                 </div>
 
-                <div class="box">
-                    <div class="remove">
-                        <span class="close">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <img src="./image/menu-2.png" alt="">
-                    <div class="content">
-                        <h3>pizza thập cẩm</h3>
-                        <span> số lượng : </span>
-                        <input type="number" name="" value="1" id="">
-                        <br>
-                        <span> giá : </span>
-                        <span class="price"> 140.000đ </span>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <div class="remove">
-                        <span class="close">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <img src="image/menu-3.jpg" alt="">
-                    <div class="content">
-                        <h3>bánh cuộn mexicana</h3>
-                        <span> số lượng : </span>
-                        <input type="number" name="" value="1" id="">
-                        <br>
-                        <span> giá : </span>
-                        <span class="price"> 60.000đ </span>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <div class="remove">
-                        <span class="close">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <img src="image/menu-4.png" alt="">
-                    <div class="content">
-                        <h3>bánh mì thập cẩm</h3>
-                        <span> số lượng : </span>
-                        <input type="number" name="" value="1" id="">
-                        <br>
-                        <span> giá : </span>
-                        <span class="price"> 45.000đ </span>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <div class="remove">
-                        <span class="close">
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <img src="image/menu-5.png" alt="">
-                    <div class="content">
-                        <h3>khoai tây chiên</h3>
-                        <span> số lượng : </span>
-                        <input type="number" name="" value="1" id="">
-                        <br>
-                        <span> giá : </span>
-                        <span class="price"> 50.000đ </span>
-                    </div>
-                </div>
 
             </div>
 
         </div>
+
+        <div class="info">
+
+            <h3 class="title"> Thông tin giao hàng </h3>
+            <form action="">
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>Tên của bạn</span>
+                        <input type="text" placeholder="VD : Nguyễn Văn A" name="" id="">
+                    </div>
+                    <div class="inputBox">
+                        <span>Số điện thoại</span>
+                        <input type="text" placeholder="" name="" id="">
+                    </div>
+                </div>
+    
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>Lời nhắn</span>
+                        <input type="text" placeholder="VD : Giao giờ hành chính" name="" id="">
+                    </div>
+                    <div class="inputBox">
+                        <span>Thời gian nhận hàng</span>
+                        <input type="datetime-local">
+                    </div>
+                </div>
+    
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>Địa chỉ giao hàng</span>
+                        <input type="text" placeholder="VD : 317 Trung Văn" name="" id="">
+                    </div>
+                </div>
+    
+            </form> </div>
 
         <div class="cart-total">
 
@@ -156,6 +125,7 @@
                 <h3 class="total"> thành tiền : <span>0</span> </h3>
                 <div>
                     <div class="promotion">
+                        <label for="promo-code">Bạn có mã giảm giá ?</label>
                         <input placeholder="Mã Giảm Giá" type="text" id="promo-code" autocomplete="off" />
                         <button type="button"></button>
                     </div>

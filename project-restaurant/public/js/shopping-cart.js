@@ -1,5 +1,5 @@
 let promotionCode = {
-    H10: 10,
+    A: 10,
     B: 20,
     C: 30,
     D: 40,
@@ -66,8 +66,6 @@ let product = [
 
 ]
 
-
-
 const productElement = document.querySelector(".box-container");
 const promotionElement = document.querySelector(".promotion");
 const total = document.querySelector('.cart-total .total span')
@@ -102,8 +100,6 @@ function renderProduct(arr) {
     // Clear nội dung
     productElement.innerHTML = "";
     let totalPrice = 0;
-
-
     for (let i = 0; i < arr.length; i++) {
         const t = arr[i];
         totalPrice += t.price * t.quality
@@ -121,16 +117,14 @@ function renderProduct(arr) {
             <input onchange="changeTotalProduct(${t.id}, event, ${t.quality})" type="number" name="" value="${t.quality}">
             <br>
             <span> giá : </span>
-            <span class="price"> ${t.price.toLocaleString()}đ </span>
+            <span class="price"> ${t.price}đ </span>
         </div>
     </div>
     `
-
     }
-    subtotal.innerText = `${totalPrice.toLocaleString()} `
-    total.innerText = `${totalPrice.toLocaleString()} `
+    subtotal.innerText = `${totalPrice.toLocaleString()}  `
+    total.innerText = `${totalPrice.toLocaleString()}  `
 }
-
 
 renderProduct(listProducts)
 
@@ -138,17 +132,18 @@ renderProduct(listProducts)
 // Xoá sản phẩm
 function deleteProduct(id) {
     // Duyệt mảng product để tìm mảng cần xoá
-
-    listProducts.forEach((item, index) => {
-        if (item.id == id) {
-            listProducts.splice(index, 1)
-            localStorage.setItem('productList', JSON.stringify(listProducts))
-            return
-        }
-    })
-    renderProduct(listProducts)
+    let result = confirm("Bạn có muốn xóa sản phẩm?");
+    if (result) {
+        listProducts.forEach((item, index) => {
+            if (item.id == id) {
+                listProducts.splice(index, 1)
+                localStorage.setItem('productList', JSON.stringify(listProducts))
+                return
+            }
+        })
+        renderProduct(listProducts)
+    }
 }
-
 
 
 function changeTotalProduct(id, event, quality) {
@@ -156,6 +151,7 @@ function changeTotalProduct(id, event, quality) {
         alert("Số lượng sản phẩm tối thiểu là 1")
         event.target.value = quality
         return
+
     }
     for (let i = 0; i < listProducts.length; i++) {
         if (listProducts[i].id == id) {
@@ -164,7 +160,6 @@ function changeTotalProduct(id, event, quality) {
         if (Number(event.target.value) == 0) {
             deleteProduct(id)
         }
-
     }
     localStorage.setItem('productList', JSON.stringify(listProducts))
     renderProduct(listProducts)
@@ -184,7 +179,6 @@ function checkPromotion() {
 function updateTotalMoney(arr) {
     let totalPrice = 0;
     let discountMoney = 0;
-
     for (let i = 0; i < arr.length; i++) {
         const p = arr[i];
         totalPrice += p.quality * p.price;
@@ -193,25 +187,20 @@ function updateTotalMoney(arr) {
     let data = checkPromotion();
 
     if (data) {
-        discountMoney = (subtotal * data ) / 100;
+        discountMoney = (totalPrice * data) / 100;
         discount.classList.remove('hide');
         alert("Áp dụng mã giảm giá thành công");
     } else {
         discount.classList.add('hide');
         alert("Mã giảm giá không tồn tại");
     }
-
-    subtotal.innerText = `${totalPrice} `
-    discountEle.innerText = `${discountMoney} `
-    total.innerText = `${totalPrice - discountMoney} `
-
+    subtotal.innerText = `${totalPrice.toLocaleString()} `
+    discountEle.innerText = `${discountMoney.toLocaleString()} `
+    total.innerText = `${(totalPrice - discountMoney).toLocaleString()} `
 }
 
 
 btnPromotion.addEventListener('click', function () {
-    updateTotalMoney(product);
+    updateTotalMoney(listProducts);
 });
-
-
-// click xem thêm
 

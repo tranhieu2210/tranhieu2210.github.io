@@ -8,6 +8,7 @@ let promotionCode = {
     D: 40,
 };
 
+
 let product = [
     {
         id: 1,

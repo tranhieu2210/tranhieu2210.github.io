@@ -192,14 +192,19 @@ a {
 	float: left;
 	width: 100%;
 	margin-bottom: 1rem;
+   font-size: 16px;
+   color: #27ae60;
+   font-weight: bold;
+   font-style: italic;
 }
 
 .promotion>input {
 	float: left;
 	width: 30%;
-	font-size: 1rem;
+	font-size: 1.2rem;
 	padding: 1rem 1.5rem;
 	border: 2px solid #DDD;
+   height: 40px;
 }
 
 .promotion:hover>input {
@@ -209,7 +214,8 @@ a {
 .promotion>button {
 	float: left;
 	width: 10%;
-	padding: 1rem 0.5rem;
+	/* padding: 1rem 0.5rem; */
+   height: 40px;
 }
 
 .promotion:hover>button {
