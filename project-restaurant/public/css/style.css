@@ -164,6 +164,7 @@ section {
 .category .box-container .box img,
 .category1 .box-container .box img {
   height: 15rem;
+  max-width: 17rem;
 }
 
 .category .box-container .box h3,
