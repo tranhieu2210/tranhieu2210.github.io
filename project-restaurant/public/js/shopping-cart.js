@@ -117,7 +117,7 @@ function renderProduct(arr) {
             <input onchange="changeTotalProduct(${t.id}, event, ${t.quality})" type="number" name="" value="${t.quality}">
             <br>
             <span> giá : </span>
-            <span class="price"> ${t.price}đ </span>
+            <span class="price"> ${t.price.toLocaleString()}đ </span>
         </div>
     </div>
     `
