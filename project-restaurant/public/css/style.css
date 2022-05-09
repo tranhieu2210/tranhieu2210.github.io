@@ -192,6 +192,8 @@ section {
 
 .btn:hover {
   background: #130f40;
+  border-color: #130f40;
+  
 }
 
 .header {

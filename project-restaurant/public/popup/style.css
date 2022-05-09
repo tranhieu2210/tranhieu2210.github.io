@@ -136,23 +136,15 @@ a {
    font-size: 1.8rem;
    color: #fff;
    background: #27ae60;
-   border:.1rem solid #444;
+   /* border:.1rem solid #444; */
    cursor: pointer;
    border-radius: 0.5rem;
 }
 
-.products-preview .preview .buttons button.cart{
-   background: #444;
-   color:#fff;
-}
-
-.products-preview .preview .buttons button.cart:hover{
-   background: #111;
-}
 
 .products-preview .preview .buttons button.buy:hover{
-   background: #444;
-   color:#fff;
+   background: #130f40;
+  border-color: #130f40;
 }
 
 
