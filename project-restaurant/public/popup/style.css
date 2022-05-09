@@ -134,9 +134,11 @@ a {
    flex:1 1 16rem;
    padding:1rem;
    font-size: 1.8rem;
-   color:#444;
+   color: #fff;
+   background: #27ae60;
    border:.1rem solid #444;
    cursor: pointer;
+   border-radius: 0.5rem;
 }
 
 .products-preview .preview .buttons button.cart{
@@ -216,6 +218,7 @@ a {
 	width: 10%;
 	/* padding: 1rem 0.5rem; */
    height: 40px;
+   background-color: #27ae60;
 }
 
 .promotion:hover>button {
