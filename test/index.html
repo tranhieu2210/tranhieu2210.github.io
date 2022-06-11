@@ -19,26 +19,39 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./responsive.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    
 </head>
 
 <body>
     <div class="header">
         <div class="container">
             <div class="header-inner d-flex align-items-center justify-content-between">
-                <h1 class="title">E-commerce</h1>
-                <div class="form-group d-flex ">
-                    <div class="dropdown d-flex align-items-center">
-                        <div class="dropdown-label">All categories</div>
-                        <div class="dropdown-icon"><i class="fa-solid fa-angle-down"></i></div>
+                <h1 class="title ">E-commerce</h1>
+                
+                <div class="form-all d-flex align-items-center " >
+                    <div class="menu-btn d-flex">
+                        <i class="fa-solid fa-bars" id="menu-btn"></i>
                     </div>
-                    <div class="search d-flex align-items-center justify-content-between">
-                        <input type="text" class="search-input" placeholder="Search anything">
-                        <button class="btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <div class="form-group d-flex ">                   
+                        <div class="search-all"></div>
+                        <div class="dropdown d-flex align-items-center d-none d-sm-block">
+                            <div class="dropdown-label align-items-center">All categories <i class="fa-solid fa-angle-down"></i></div>
+                            <!-- <div class="dropdown-icon"><i class="fa-solid fa-angle-down"></i></div> -->
+                        </div>
+                        <div class="search d-flex align-items-center justify-content-between">
+                            <input type="text" class="search-input" placeholder="Search anything">
+                            <button class="btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </div>
                     </div>
-
                 </div>
-                <div class="more d-flex align-items-center">
-                    <div class="btn orange">Help</div>
+                
+                <div class="more d-flex align-items-center ">
+                    <div class="btn orange" id="btn">Help</div>
                     <div class="more1 d-flex align-items-center">
                         <div class="more-icon"><i class="fa-regular fa-user"></i></div>
                         <div class="more-label">Account</div>
@@ -50,32 +63,34 @@
                         </div>
                         <div class="more-label">Shoping</div>
                     </div>
-
                 </div>
             </div>
 
             <div class="header-nav d-flex justify-content-between">
-                <p class="header-nav-item active">Jewelry & Accessories
-                    <span class="header-nav-border"></span>
-                </p>
-                <p class="header-nav-item">Clothing & Shoes
-                    <span class="header-nav-border"></span>
-                </p>
-                <p class="header-nav-item">Home & Living
-                    <span class="header-nav-border"></span>
-                </p>
-                <p class="header-nav-item">Wedding & Party
-                    <span class="header-nav-border"></span>
-                </p>
-                <p class="header-nav-item">Toys & Entertainment
-                    <span class="header-nav-border"></span>
-                </p>
-                <p class="header-nav-item">Art & Collectibles
-                    <span class="header-nav-border"></span>
-                </p>
-                <p class="header-nav-item">Craft Supplies & Tools
-                    <span class="header-nav-border"></span>
-                </p>
+
+                <div class="header-nav-item-all  justify-content-between d-none d-xl-flex d-lg-flex">
+                    <p class="header-nav-item active">Jewelry & Accessories
+                        <span class="header-nav-border"></span>
+                    </p>
+                    <p class="header-nav-item">Clothing & Shoes
+                        <span class="header-nav-border"></span>
+                    </p>
+                    <p class="header-nav-item">Home & Living
+                        <span class="header-nav-border"></span>
+                    </p>
+                    <p class="header-nav-item">Wedding & Party
+                        <span class="header-nav-border"></span>
+                    </p>
+                    <p class="header-nav-item">Toys & Entertainment
+                        <span class="header-nav-border"></span>
+                    </p>
+                    <p class="header-nav-item">Art & Collectibles
+                        <span class="header-nav-border"></span>
+                    </p>
+                    <p class="header-nav-item">Craft Supplies & Tools
+                        <span class="header-nav-border"></span>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -83,28 +98,28 @@
     <div class="main">
         <div class="container">
             <div class="row">
-                <div class="col-4">
+                <div class="col-md-4 col-xs-12">
                     <div class="banner-img">
                         <img src="./image/shoes.png" alt="">
                         <p class="banner-p">Clothing & Shoes</p>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-md-4 col-xs-12">
                     <div class="banner-img">
                         <img src="./image/living.png" alt="">
-                        <p class="banner-p">Clothing & Shoes</p>
+                        <p class="banner-p">Home & Living</p>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-md-4 col-xs-12">
                     <div class="banner-img">
                         <img src="./image/art.png" alt="">
-                        <p class="banner-p">Clothing & Shoes</p>
+                        <p class="banner-p">Art & Collectibles</p>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-3">
+                <div class="col-lg-3 col-md-4">
                     <div class="banner-item" style="background-color: #D3FBD9;">
                         <div class="banner-img2 d-flex justify-content-center">
                             <i class="fa-brands fa-gratipay"></i>
@@ -128,7 +143,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-md-4 d-none d-sm-block">
                     <div class="banner-item" style="background-color: #FFE4BD;">
                         <div class="banner-img2 d-flex justify-content-center">
                             <i class="fa-brands fa-gratipay"></i>
@@ -150,7 +165,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-md-4  d-none d-sm-block">
                     <div class="banner-item" style="background-color: #D9ABFD;">
                         <div class="banner-img2 d-flex justify-content-center">
                             <i class="fa-brands fa-gratipay"></i>
@@ -170,7 +185,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 d-none d-lg-block d-xl-block">
                     <div class="banner-item" style="background-color: #FDF0AB;">
                         <div class="banner-img2 d-flex justify-content-center">
                             <i class="fa-brands fa-gratipay"></i>
@@ -195,7 +210,7 @@
             </div>
 
             <div class="row">
-                <div class="col-4">
+                <div class="col-md-4 col-xs-12 ">
                     <div class="banner2 d-flex">
                         <div class="banner2-content">
                             <h1>A community <br>
@@ -209,7 +224,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-md-4 d-none d-sm-block">
                     <div class="banner2 d-flex">
                         <div class="banner2-content">
                             <h1>Support independent
@@ -223,7 +238,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-md-4 d-none d-sm-block">
                     <div class="banner2 d-flex">
                         <div class="banner2-content">
                             <h1>Peace of mind </h1>
@@ -241,59 +256,61 @@
 
 
 
-            <div class="product-category">
+            <div class="product-category swiper mySwiper">
                 <h1>Find things you'll love. Support independent sellers.</h1>
                 <span>Only on polka.</span>
-                <div class="product-category-all d-flex justify-content-between">
-                    <div class="product-category-item">
+                <div class="product-category-all d-flex justify-content-between swiper-wrapper">
+                    <div class="product-category-item swiper-slide">
                         <div class="product-category-item-img">
                             <img src="./image/category1.png" alt="">
                         </div>
                         <p>Craft Kits</p>
                     </div>
-                    <div class="product-category-item">
+                    <div class="product-category-item swiper-slide">
                         <div class="product-category-item-img">
                             <img src="./image/category2.png" alt="">
                         </div>
                         <p>Throw Pillows</p>
                     </div>
-                    <div class="product-category-item">
+                    <div class="product-category-item swiper-slide">
                         <div class="product-category-item-img">
                             <img src="./image/category3.png" alt="">
                         </div>
                         <p>Natural Glass</p>
                     </div>
-                    <div class="product-category-item">
+                    <div class="product-category-item swiper-slide">
                         <div class="product-category-item-img">
                             <img src="./image/category4.png" alt="">
                         </div>
                         <p>Self-care</p>
                     </div>
-                    <div class="product-category-item">
+                    <div class="product-category-item swiper-slide">
                         <div class="product-category-item-img">
                             <img src="./image/category5.png" alt="">
                         </div>
                         <p>Gift Ideas</p>
                     </div>
-                    <div class="product-category-item">
+                    <div class="product-category-item swiper-slide">
                         <div class="product-category-item-img">
                             <img src="./image/category6.png" alt="">
                         </div>
                         <p>Wall Decor</p>
                     </div>
-                    <div class="product-category-item">
+                    <div class="product-category-item swiper-slide">
                         <div class="product-category-item-img">
                             <img src="./image/category7.png" alt="">
                         </div>
                         <p>Wedding</p>
                     </div>
-                    <div class="product-category-item">
+                    <div class="product-category-item swiper-slide">
                         <div class="product-category-item-img">
                             <img src="./image/category8.png" alt="">
                         </div>
                         <p>Life Style</p>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
+
 
                 <div class="title-product d-flex ">
                     <h1>Discover unique hand-picked items</h1>
@@ -302,8 +319,9 @@
                     </p>
                 </div>
 
+                
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-lg-2 col-md-3 col-xs-12 ">
                         <div class="product2-item">
                             <div class="product2-img d-flex justify-content-center">
                                 <i class="fa-brands fa-gratipay"></i>
@@ -318,7 +336,7 @@
                         </div>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-lg-2 col-md-3 d-none d-sm-block">
                         <div class="product2-item">
                             <div class="product2-img d-flex justify-content-center">
                                 <i class="fa-brands fa-gratipay"></i>
@@ -333,7 +351,7 @@
                         </div>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-lg-2 col-md-3 d-none d-sm-block">
                         <div class="product2-item">
                             <div class="product2-img d-flex justify-content-center">
                                 <i class="fa-brands fa-gratipay"></i>
@@ -348,7 +366,7 @@
                         </div>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-lg-2 col-md-3 d-none d-sm-block">
                         <div class="product2-item">
                             <div class="product2-img d-flex justify-content-center">
                                 <i class="fa-brands fa-gratipay"></i>
@@ -363,7 +381,7 @@
                         </div>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-lg-2 d-none d-lg-block">
                         <div class="product2-item">
                             <div class="product2-img d-flex justify-content-center">
                                 <i class="fa-brands fa-gratipay"></i>
@@ -378,7 +396,7 @@
                         </div>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-lg-2 d-none d-lg-block">
                         <div class="product2-item">
                             <div class="product2-img d-flex justify-content-center">
                                 <i class="fa-brands fa-gratipay"></i>
@@ -395,27 +413,27 @@
                 </div>
 
                 <div class="menu d-flex justify-content-between">
-                    <div class="col-2">
-                        <p class="menu-item active1">Modern Farmhouse
+                    <div class="col-lg-2 col-md-4" id="menu-item-border">
+                        <p class="menu-item active1 ">Modern Farmhouse
                             <span class="menu-item-border"></span>
                         </p>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-lg-2 col-md-4" id="menu-item-border">
                         <p class="menu-item ">
                             Eclectic Decor
                             <span class="menu-item-border"></span>
                         </p>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-lg-2 col-md-4" id="menu-item-border">
                         <p class="menu-item ">
                             Polka Boho Decor
                             <span class="menu-item-border"></span>
                         </p>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-lg-2 col-md-4" id="menu-item-border">
                         <p class="menu-item ">
                             Minimalist Style
                             <span class="menu-item-border"></span>
@@ -423,14 +441,14 @@
                     </div>
 
 
-                    <div class="col-2">
+                    <div class="col-lg-2 col-md-4" id="menu-item-border">
                         <p class="menu-item ">
                             Anniversary Gift
                             <span class="menu-item-border"></span>
                         </p>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-lg-2 col-md-4" id="menu-item-border">
                         <p class="menu-item ">
                             Wedding Gifts
                             <span class="menu-item-border"></span>
@@ -439,12 +457,12 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-lg-3 col-md-4 col-xs-12 ">
                         <div class="banner-item">
                             <img src="./image/shoes-green.png" height="418px" alt="">
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-lg-3 col-md-4  d-none d-sm-block">
                         <div class="banner-item" style="background-color: #FBF7D3;">
                             <div class="banner-img2 d-flex justify-content-center">
                                 <i class="fa-brands fa-gratipay"></i>
@@ -468,7 +486,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-lg-3 col-md-4 d-none d-sm-block">
                         <div class="banner-item" style="background-color: #FFBDBD;">
                             <div class="banner-img2 d-flex justify-content-center">
                                 <i class="fa-brands fa-gratipay"></i>
@@ -488,7 +506,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-lg-3 d-none d-lg-block d-xl-block">
                         <div class="banner-item" style="background-color: #C0ABFD;">
                             <div class="banner-img2 d-flex justify-content-center">
                                 <i class="fa-brands fa-gratipay"></i>
@@ -513,7 +531,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-lg-2 col-md-3 col-xs-12">
                         <div class="product2-item">
                             <div class="product2-img d-flex justify-content-center">
                                 <i class="fa-brands fa-gratipay"></i>
@@ -528,7 +546,7 @@
                         </div>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-lg-2 col-md-3 d-none d-sm-block">
                         <div class="product2-item">
                             <div class="product2-img d-flex justify-content-center">
                                 <i class="fa-brands fa-gratipay"></i>
@@ -543,7 +561,7 @@
                         </div>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-lg-2 col-md-3 d-none d-sm-block">
                         <div class="product2-item">
                             <div class="product2-img d-flex justify-content-center">
                                 <i class="fa-brands fa-gratipay"></i>
@@ -558,7 +576,7 @@
                         </div>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-lg-2 col-md-3 d-none d-sm-block">
                         <div class="product2-item">
                             <div class="product2-img d-flex justify-content-center">
                                 <i class="fa-brands fa-gratipay"></i>
@@ -573,7 +591,7 @@
                         </div>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-lg-2 d-none d-lg-block ">
                         <div class="product2-item">
                             <div class="product2-img d-flex justify-content-center">
                                 <i class="fa-brands fa-gratipay"></i>
@@ -588,7 +606,7 @@
                         </div>
                     </div>
 
-                    <div class="col-2">
+                    <div class="col-lg-2 d-none d-lg-block">
                         <div class="product2-item">
                             <div class="product2-img d-flex justify-content-center">
                                 <i class="fa-brands fa-gratipay"></i>
@@ -616,10 +634,11 @@
 
                     <div class="custom-search">
                         <input type="text" class="custom-search-input" placeholder="Drop your email">
-                        <button class="custom-search-botton" type="submit">Subscribe <i class="fa-solid fa-arrow-right"></i></button>  
-                        
+                        <button class="custom-search-botton" type="submit">Subscribe <i
+                                class="fa-solid fa-arrow-right"></i></button>
+
                     </div>
-                    <span style="text-decoration-line: underline;">First order only. You’re ready?</span>
+                    <span style="text-decoration-line: underline;" id="really">First order only. You’re ready?</span>
                 </div>
             </div>
 
@@ -628,6 +647,17 @@
     </div>
 
     <script src="./main.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+      </script>
 </body>
 
 
