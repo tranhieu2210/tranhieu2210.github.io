@@ -22,11 +22,17 @@
     #menu-item-border {
         padding-bottom: 45px;
     }
+    .product-category-item p {
+        max-width: 90px;
+    }
     .banner-item img {
         max-width: 220px;
     }
     .form-group {
         margin-left: 24px;
+    }
+    .product2-img img {
+        max-width: 156px;
     }
     .banner-img img {
         height: 150px;
@@ -152,5 +158,8 @@
     }
     .custom-search-input {
         margin-left: -20px;
+    }
+    .swiper-slide {
+        margin-right: 48px!important;
     }
 }

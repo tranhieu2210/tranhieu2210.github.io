@@ -20,11 +20,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="./responsive.css">
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
-    
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -32,15 +29,16 @@
         <div class="container">
             <div class="header-inner d-flex align-items-center justify-content-between">
                 <h1 class="title ">E-commerce</h1>
-                
-                <div class="form-all d-flex align-items-center " >
+
+                <div class="form-all d-flex align-items-center ">
                     <div class="menu-btn d-flex">
                         <i class="fa-solid fa-bars" id="menu-btn"></i>
                     </div>
-                    <div class="form-group d-flex ">                   
+                    <div class="form-group d-flex ">
                         <div class="search-all"></div>
                         <div class="dropdown d-flex align-items-center d-none d-sm-block">
-                            <div class="dropdown-label align-items-center">All categories <i class="fa-solid fa-angle-down"></i></div>
+                            <div class="dropdown-label align-items-center">All categories <i
+                                    class="fa-solid fa-angle-down"></i></div>
                             <!-- <div class="dropdown-icon"><i class="fa-solid fa-angle-down"></i></div> -->
                         </div>
                         <div class="search d-flex align-items-center justify-content-between">
@@ -49,7 +47,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="more d-flex align-items-center ">
                     <div class="btn orange" id="btn">Help</div>
                     <div class="more1 d-flex align-items-center">
@@ -308,8 +306,9 @@
                         </div>
                         <p>Life Style</p>
                     </div>
-                    <div class="swiper-pagination"></div>
+
                 </div>
+
 
 
                 <div class="title-product d-flex ">
@@ -319,7 +318,7 @@
                     </p>
                 </div>
 
-                
+
                 <div class="row">
                     <div class="col-lg-2 col-md-3 col-xs-12 ">
                         <div class="product2-item">
@@ -650,15 +649,34 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".mySwiper", {
-          slidesPerView: 3,
-          spaceBetween: 30,
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
+            slidesPerView: 8,
+            spaceBetween: 30,
+            slidesPerGroup: 8,
+            breakpoints: {
+                821: {
+                    slidesPerView: 8,
+                    spaceBetween: 30,
+                    slidesPerGroup: 1,
+                },
+                767: {
+                    slidesPerView: 5,
+                    spaceBetween: 70,
+                    slidesPerGroup: 1,
+                },
+                300: {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                    slidesPerGroup: 1,
+                }
+            },
+          loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
         });
-      </script>
-</body>
+    </script>
 
 
 
